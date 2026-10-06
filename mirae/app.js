@@ -49,15 +49,15 @@ const homeHero = () => `
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-veil"></div>
   <div class="wrap hero-body">
-    <div class="eyebrow">Mirae I&amp;N Tech — Financial IT &amp; AI Platform Partner since 2003</div>
+    <div class="eyebrow">Mirae I&amp;N Tech — Financial IT Partner since 2003</div>
     <h1>
-      <span class="ln"><span>금융 IT의 경험으로,</span></span>
-      <span class="ln"><span><em>AI 업무 플랫폼</em>을 만듭니다</span></span>
+      <span class="ln"><span>금융 IT의 현장에서,</span></span>
+      <span class="ln"><span><em>기술의 답</em>을 찾습니다</span></span>
     </h1>
-    <p class="hero-sub">20년 넘게 금융권 시스템을 구축·운영해 온 기술력으로, 운영·고객·자산·인사 업무를 하나로 잇는 AI 기반 ITSM 플랫폼을 직접 개발했습니다.</p>
+    <p class="hero-sub">20년 넘게 금융권 시스템을 구축·운영해 온 경험을 새로운 기술로 연결합니다. 그리고 그 현장의 업무는, 직접 만든 사내 워크스페이스 Flame으로 관리합니다.</p>
     <div class="hero-actions">
-      <a href="#/solutions" class="btn btn-accent">솔루션 살펴보기 ${arrow}</a>
-      <a href="#/solutions?sec=demo" class="btn btn-ghost">데모 보기 ${arrow}</a>
+      <a href="#/business" class="btn btn-accent">사업영역 살펴보기 ${arrow}</a>
+      <a href="#/solutions" class="btn btn-ghost">Flame 살펴보기 ${arrow}</a>
     </div>
   </div>
   <div class="hero-foot">
@@ -80,8 +80,8 @@ const homeAbout = () => `
       </div>
       <div class="about-r">
         <p class="lead rv d2">2003년 설립 이후 은행·보험·카드·저축은행·캐피탈 등 금융권 고객과 함께 시스템 구축부터 운영까지 수행해 왔습니다.</p>
-        <p class="rv d2">20년이 넘는 시간 동안 축적한 것은 기술 그 자체보다, 장애 없이 돌아가는 시스템에 대한 신뢰였습니다. 이제 그 현장 경험을 AI 플랫폼으로 확장합니다.</p>
-        <p class="rv d3">SI · ITO · 인프라 · 엔터프라이즈 솔루션의 네 개 사업라인 위에, 자체 개발한 AI ITSM 플랫폼 <b>Flame</b>을 얹어 운영·고객·자산·인사 업무를 하나의 흐름으로 연결합니다.</p>
+        <p class="rv d2">20년이 넘는 시간 동안 축적한 것은 기술 그 자체보다, 장애 없이 돌아가는 시스템에 대한 신뢰였습니다. 그 경험을 디지털 전환과 AI 기술로 이어 가고 있습니다.</p>
+        <p class="rv d3">SI · ITO · 인프라 · 엔터프라이즈 솔루션의 네 개 사업라인으로 고객의 시스템을 구축·운영하고, 그 과정의 내부 업무는 자체 개발한 사내 워크스페이스 <b>Flame</b>으로 관리합니다.</p>
       </div>
     </div>
     <div class="facts">
@@ -103,91 +103,55 @@ const homeAbout = () => `
   </div>
 </section>`;
 
+/* Flame 4개 업무 영역 카드 (홈 · Flame 상세 공용) */
+const flameModuleGrid = () => `
+  <div class="biz-grid grid-4">
+    ${D.FLAME.modules.map(m => `
+      <article class="biz-cell">
+        <div class="biz-top"><span class="biz-no">${esc(m.no)}</span><span class="biz-tag">${esc(m.tag)}</span></div>
+        <div class="glyph ${esc(m.glyph)}" aria-hidden="true"><i class="${m.glyph.slice(2)}1"></i><i class="${m.glyph.slice(2)}2"></i>${m.glyph === 'g-b' || m.glyph === 'g-d' ? `<i class="${m.glyph.slice(2)}3"></i>` : ''}</div>
+        <h3><small>${esc(m.en)}</small>${esc(m.kr)}</h3>
+        <p>${esc(m.d)}</p>
+        <ul class="wf-list">${m.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
+      </article>`).join('')}
+  </div>`;
+
 const homePlatform = () => `
-<section class="platform sec dark" id="platform" data-screen-label="03 Platform">
+<section class="platform sec dark" id="platform" data-screen-label="03 Internal Workspace">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow rv">02 — Our Platform</div>
-      <h2 class="rv d1">현장에서 찾은 문제,<br><em style="font-style:normal;color:var(--accent)">AI로 직접 풀었습니다.</em></h2>
-      <p class="rv d2">20년 넘게 금융권 시스템을 운영하며 매일 마주한 반복되는 요청, 흩어진 처리 이력, 놓치기 쉬운 SLA. 그 불편함을 가장 가까이에서 겪어 온 우리가, AI를 더한 ITSM 플랫폼을 직접 설계하고 만들었습니다.</p>
+      <div class="eyebrow rv">02 — Internal Workspace</div>
+      <h2 class="rv d1">현장의 업무를,<br><em style="font-style:normal;color:var(--accent)">하나의 워크스페이스로.</em></h2>
+      <p class="rv d2">미래아이엔텍은 금융 IT 현장에서 발생하는 다양한 업무를 보다 효율적으로 관리하기 위해 자체 업무 워크스페이스 Flame을 개발하고 운영합니다.</p>
     </div>
-    <p class="rv d2 ph-note" style="margin-top:-56px">가져다 쓴 솔루션이 아닌, 금융 현장에서 직접 쓰며 다듬어 온 플랫폼.</p>
-
-    <div class="sol-cards">
-      ${D.SOLUTIONS.map((s, i) => `
-        <article class="solcard rv d${i + 1}${s.rep ? ' lead-card' : ''}">
-          <div class="sc-logo"><i aria-hidden="true"></i>${esc(s.en)}</div>
-          <div class="sc-name">${esc(s.name)}${s.rep ? '<span class="badge-rep">대표 솔루션</span>' : ''}</div>
-          <p class="sc-def">${esc(s.def)}</p>
-          <ul class="sc-feats">${s.feats.slice(0, 3).map(f => `<li>${esc(f.t)} — ${esc(f.d)}</li>`).join('')}</ul>
-          <a class="sc-more" href="#/solutions?sec=${esc(s.id)}">자세히 보기 ${arrow}</a>
-        </article>`).join('')}
-    </div>
+    <p class="rv d2 ph-note" style="margin-top:-56px">프로젝트, 인력, 업무 요청, 계약, 실적, 결재 등 업무 과정에서 발생하는 다양한 정보를 하나의 공간에서 관리합니다.</p>
 
     <div class="feat">
+      ${D.FLAME.flow.map((f, i) => `<div class="rv d${i + 1}"><span class="mono">${esc(f.k)}</span><h4>${esc(f.t)}</h4><p>${esc(f.d)}</p></div>`).join('')}
+    </div>
+    <div class="rv" style="margin-top:40px">
+      <a href="#/solutions" class="btn btn-accent">Flame 살펴보기 ${arrow}</a>
+    </div>
+
+    <div class="eyebrow rv" style="margin-top:clamp(80px,10vw,140px)">Core Technology — 고객 프로젝트에 적용하는 기술</div>
+    <div class="feat" style="margin-top:24px">
       ${D.TECH.map((t, i) => `<div class="rv d${i + 1}"><span class="mono">${esc(t.k)}</span><h4>${esc(t.t)}</h4><p>${esc(t.d)}</p></div>`).join('')}
     </div>
   </div>
 </section>`;
 
-const homeAreas = () => `
-<section class="areas sec" id="areas" data-screen-label="04 Workflow Areas">
+const homeModules = () => `
+<section class="areas sec" id="areas" data-screen-label="04 Workspace Modules">
   <div class="wrap">
-    ${head('03', 'Workflow Areas', '흩어진 업무를<br>하나의 AI 워크플로우로', '장애와 요청이 오가는 운영, 고객 응대, 자산, 인사. 각각 다른 도구에서 처리하던 일을 Flame 하나로 연결합니다.')}
-    <div class="biz-grid grid-4">
-      ${D.AREAS.map(a => `
-        <article class="biz-cell">
-          <div class="biz-top"><span class="biz-no">${esc(a.no)}</span><span class="biz-tag">${esc(a.tag)}</span></div>
-          <div class="glyph ${esc(a.glyph)}" aria-hidden="true"><i class="${a.glyph.slice(2)}1"></i><i class="${a.glyph.slice(2)}2"></i>${a.glyph === 'g-b' || a.glyph === 'g-d' ? `<i class="${a.glyph.slice(2)}3"></i>` : ''}</div>
-          <h3><small>${esc(a.en)}</small>${esc(a.kr)}</h3>
-          <p>${esc(a.d)}</p>
-          <ul class="wf-list">${a.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
-          <div class="wf-tags">${a.sols.map(s => `<span>${esc(s)}</span>`).join('')}</div>
-        </article>`).join('')}
-    </div>
-  </div>
-</section>`;
-
-const homeImpact = () => `
-<section class="impact-sec sec" id="impact" data-screen-label="05 Impact">
-  <div class="wrap">
-    ${head('04', 'Impact', '현장에서 측정한 변화', '아래 수치는 도입 고객 기준으로 측정·확정 중입니다. 확정되는 대로 업데이트됩니다.')}
-    <div class="impact">
-      ${D.IMPACT.map((m, i) => `
-        <div class="rv d${i + 1}">
-          <div class="k">${esc(m.k)}</div>
-          <div class="v">${PH(m.v)}</div>
-          <div class="d">${esc(m.d)}</div>
-        </div>`).join('')}
-    </div>
-  </div>
-</section>`;
-
-const homeUsers = () => `
-<section class="users sec" id="users" data-screen-label="06 Who uses it">
-  <div class="wrap">
-    ${head('05', 'Who uses it', 'IT 담당자부터<br>모든 직원까지', '같은 플랫폼을 쓰지만, 보는 화면과 필요한 정보는 역할마다 다릅니다.')}
-    <div class="tabs" role="tablist" aria-label="사용자 유형">
-      ${D.USERS.map((u, i) => `<button role="tab" id="tab-${u.id}" aria-controls="panel-${u.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(u.tab)}</button>`).join('')}
-    </div>
-    ${D.USERS.map((u, i) => `
-      <div class="tabpanel" role="tabpanel" id="panel-${u.id}" aria-labelledby="tab-${u.id}" ${i === 0 ? '' : 'hidden'}>
-        <div class="tab-grid">
-          <div><h3>${esc(u.h)}</h3><p>${esc(u.d)}</p></div>
-          <ul>${u.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
-        </div>
-      </div>`).join('')}
-    <div class="ind-row">
-      <span class="mono">대상 업종</span>
-      ${D.INDUSTRIES_SERVED.map(x => `<span>${esc(x)}</span>`).join('')}
-    </div>
+    ${head('03', 'Flame Workspace', '계약부터 결재까지,<br>네 개의 업무 영역', '사업 수행 과정에서 발생하는 계약·인력·프로젝트·사내 업무를 Flame 안에서 영역별로 관리합니다.')}
+    ${flameModuleGrid()}
   </div>
 </section>`;
 
 const homeClients = () => `
-<section class="clients-dark sec dark" id="clients" data-screen-label="07 Clients">
+<section class="clients-dark sec dark" id="clients" data-screen-label="05 Clients">
   <div class="wrap">
-    ${head('06', 'Clients', '금융권 중심의<br>검증된 고객사', '사업실적 및 서비스 소개에 게재된 고객사입니다. 로고 이미지로 교체할 수 있도록 텍스트 워드마크로 구성했습니다.')}
+    ${head('04', 'Clients', '금융권 중심의<br>검증된 고객사', '사업실적 및 서비스 소개에 게재된 고객사입니다. 로고 이미지로 교체할 수 있도록 텍스트 워드마크로 구성했습니다.')}
   </div>
   <div style="display:grid;gap:18px;margin-top:8px">
     ${marqueeRow('mq1')}
@@ -196,9 +160,9 @@ const homeClients = () => `
 </section>`;
 
 const homeNews = () => `
-<section class="news sec" id="news" data-screen-label="08 Newsroom">
+<section class="news sec" id="news" data-screen-label="06 Newsroom">
   <div class="wrap">
-    ${head('07', 'Newsroom', '미래아이엔텍 소식', '제품·사업·회사 소식을 전합니다. 아래 6건은 구조 확인용 샘플 콘텐츠입니다.')}
+    ${head('05', 'Newsroom', '미래아이엔텍 소식', '사업·기술·회사 소식을 전합니다. 아래 6건은 구조 확인용 샘플 콘텐츠입니다.')}
     <div class="ncards">
       ${D.NEWS.slice(0, 3).map(n => `
         <a class="ncard rv" href="#/newsroom/${esc(n.slug)}">
@@ -218,13 +182,13 @@ const homeNews = () => `
 </section>`;
 
 const homeCta = () => `
-<section class="cta" id="demo-cta" data-screen-label="09 Demo CTA">
+<section class="cta" id="contact-cta" data-screen-label="07 Contact CTA">
   <div class="wrap">
-    <div class="eyebrow rv" style="color:var(--muted-d)">08 — Get Started</div>
-    <h2 class="rv d1" style="margin-top:32px"><em>Flame</em>을 직접<br>경험해 보세요.</h2>
+    <div class="eyebrow rv" style="color:var(--muted-d)">06 — Contact</div>
+    <h2 class="rv d1" style="margin-top:32px">복잡한 업무를,<br><em>더 나은 흐름</em>으로.</h2>
     <div class="cta-row rv d2">
-      <a href="#/solutions?sec=demo" class="btn btn-big">데모 보기 ${arrow}</a>
-      <a href="mailto:${esc(C.email)}" class="btn btn-ghost" style="height:76px;padding:0 34px">도입 문의 ${arrow}</a>
+      <a href="mailto:${esc(C.email)}" class="btn btn-big">사업 문의 ${arrow}</a>
+      <a href="#/business/projects" class="btn btn-ghost" style="height:76px;padding:0 34px">프로젝트 실적 보기 ${arrow}</a>
     </div>
   </div>
 </section>`;
@@ -233,9 +197,7 @@ const renderHome = () => `
 ${homeHero()}
 ${homeAbout()}
 ${homePlatform()}
-${homeAreas()}
-${homeImpact()}
-${homeUsers()}
+${homeModules()}
 ${homeClients()}
 ${homeNews()}
 ${homeCta()}`;
@@ -254,7 +216,7 @@ ${pgHero('<a href="#/company">Company</a><span>/</span>기업소개', 'Company 0
       </div>
       <div class="about-r">
         <p class="rv d2" style="color:var(--muted)">미래아이엔텍은 금융권 시스템을 안정적으로 운영해 온 경험을 바탕으로, 고객의 업무 환경에 최적화된 IT 서비스를 제공합니다. 컨설팅부터 설계·구축·운영·고도화까지 전 주기를 하나의 파트너가 책임집니다.</p>
-        <p class="rv d2" style="color:var(--muted)">최근에는 그 운영 경험을 AI 플랫폼으로 확장해, 반복 업무를 줄이고 처리 이력을 남기는 <b>AI ITSM 플랫폼 Flame</b>을 직접 개발했습니다.</p>
+        <p class="rv d2" style="color:var(--muted)">그리고 사업을 수행하며 발생하는 계약·인력·프로젝트·결재 등 내부 업무는, 직접 설계하고 개발한 <b>사내 업무 워크스페이스 Flame</b>으로 관리합니다.</p>
       </div>
     </div>
 
@@ -380,32 +342,67 @@ ${pgHero('<a href="#/company">Company</a><span>/</span>조직구성', 'Company 0
 /* ══════════════════════════ SOLUTIONS ══════════════════════════ */
 
 const SOL_NAV = [
-  { id: 'overview', t: '개요' }, { id: 'flame', t: 'Flame' },
-  { id: 'solution2', t: '솔루션 2' }, { id: 'solution3', t: '솔루션 3' },
-  { id: 'areas', t: '업무영역별 활용' }, { id: 'cases', t: '도입 사례' },
-  { id: 'start', t: '시작 가이드' }, { id: 'demo', t: '데모' },
+  { id: 'overview', t: '개요' }, { id: 'features', t: '주요 기능' },
+  { id: 'usage', t: '업무 활용' }, { id: 'ai', t: 'AI 기능' },
+  { id: 'solutions', t: '엔터프라이즈 솔루션' },
 ];
 
 const solOverview = () => `
 <section class="sec" id="overview" style="background:var(--white)">
   <div class="wrap">
-    ${head('01', 'Overview', 'AI + 워크플로우,<br>하나의 플랫폼', '장애·요청·변경·자산·고객 문의·인사 요청이 서로 다른 도구에 흩어져 있으면, 결국 사람이 다시 연결해야 합니다. Flame은 그 연결을 AI가 담당하도록 만든 플랫폼입니다.')}
+    ${head('01', 'Overview', '우리가 쓰기 위해,<br>우리가 만들었습니다', 'Flame은 외부에 판매하는 제품이 아닙니다. 미래아이엔텍 임직원이 매일의 업무에 직접 사용하는 내부 업무 시스템입니다.')}
     <div class="about-grid">
       <div class="about-l">
         <div class="eyebrow rv">Why we built it</div>
         <h2 class="rv d1" style="font-size:clamp(26px,3vw,44px);margin-top:32px">왜 직접 만들었나</h2>
       </div>
       <div class="about-r">
-        <p class="rv d2" style="color:var(--muted)">우리는 20년 넘게 금융권 시스템을 운영해 왔습니다. 그 시간 동안 매일 반복되는 요청, 개인에게 남는 처리 이력, 월말에야 집계되는 SLA를 지켜봤습니다.</p>
-        <p class="rv d2" style="color:var(--muted)">불편함을 가장 가까이에서 겪은 사람이 만든 도구는 다릅니다. 현장에서 직접 쓰며 다듬었기 때문에, 실제 업무 흐름을 기준으로 화면과 우선순위가 정해졌습니다.</p>
-        <p class="rv d3" style="color:var(--muted)">가져다 쓴 솔루션이 아닌, <b>금융 현장에서 직접 쓰며 다듬어 온 플랫폼</b>입니다.</p>
+        <p class="rv d2" style="color:var(--muted)">미래아이엔텍은 금융권 고객의 IT 시스템을 구축하고 운영합니다. 그 사업을 수행하는 과정에서는 계약, 인력 투입, 프로젝트, 업무 요청, 결재 등 다양한 내부 업무가 함께 발생합니다.</p>
+        <p class="rv d2" style="color:var(--muted)">이 정보들이 서로 다른 곳에 흩어지지 않도록, 현장에서 필요한 기능을 내부 업무에 맞춰 직접 설계하고 개발했습니다.</p>
+        <p class="rv d3" style="color:var(--muted)"><b>미래아이엔텍이 직접 개발하고, 직접 사용하는 업무 시스템</b>입니다.</p>
       </div>
     </div>
     <div class="lines">
-      <div class="rv"><div class="k">01 / Connect</div><h4>업무를 연결</h4><p>운영·고객·자산·인사 요청을 하나의 워크플로우로 묶습니다.</p></div>
-      <div class="rv d1"><div class="k">02 / Automate</div><h4>AI가 처리</h4><p>분류·배정·답변 추천을 AI가 담당해 사람은 판단에 집중합니다.</p></div>
-      <div class="rv d2"><div class="k">03 / Measure</div><h4>숫자로 확인</h4><p>업무량·처리 시간·SLA 준수율을 실시간 지표로 남깁니다.</p></div>
-      <div class="rv d3"><div class="k">04 / Improve</div><h4>계속 개선</h4><p>이력이 쌓일수록 분류 정확도와 처리 속도가 함께 올라갑니다.</p></div>
+      ${D.FLAME.flow.map((f, i) => `<div class="rv${i ? ` d${i}` : ''}"><div class="k">${esc(f.k)}</div><h4>${esc(f.t)}</h4><p>${esc(f.d)}</p></div>`).join('')}
+    </div>
+  </div>
+</section>`;
+
+const solFeatures = () => `
+<section class="sec" id="features" style="background:var(--paper)">
+  <div class="wrap">
+    ${head('02', 'Features', '주요 기능', '계약 · 인력 · 프로젝트 · 사내 업무를 네 개의 영역으로 나누어 관리합니다.')}
+    ${flameModuleGrid()}
+    <div class="mock rv">
+      <div class="mock-bar"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span>Flame — [화면 경로]</span></div>
+      ${phBlock('Flame 화면 이미지 삽입 영역', '16:9 · 실제 Flame 화면 캡처로 교체하세요')}
+    </div>
+  </div>
+</section>`;
+
+const solUsage = () => `
+<section class="sec" id="usage" style="background:var(--white)">
+  <div class="wrap">
+    ${head('03', 'In Practice', '업무 활용', '같은 워크스페이스를 쓰지만, 역할에 따라 주로 보는 정보는 다릅니다.')}
+    <div class="tabs" role="tablist" aria-label="역할별 업무 활용">
+      ${D.FLAME.usage.map((u, i) => `<button role="tab" id="tab-${u.id}" aria-controls="panel-${u.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(u.tab)}</button>`).join('')}
+    </div>
+    ${D.FLAME.usage.map((u, i) => `
+      <div class="tabpanel" role="tabpanel" id="panel-${u.id}" aria-labelledby="tab-${u.id}" ${i === 0 ? '' : 'hidden'}>
+        <div class="tab-grid">
+          <div><h3>${esc(u.h)}</h3><p>${esc(u.d)}</p></div>
+          <ul>${u.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
+        </div>
+      </div>`).join('')}
+  </div>
+</section>`;
+
+const solAI = () => `
+<section class="sec dark" id="ai" style="background:var(--ink)">
+  <div class="wrap">
+    ${head('04', 'AI', 'AI 기반 업무 지원', '반복 업무의 효율화를 위해 AI를 활용합니다. 구체적인 기능은 확인되는 대로 업데이트합니다.')}
+    <div class="feat">
+      ${D.FLAME.ai.map((a, i) => `<div class="rv d${i + 1}"><span class="mono">${esc(a.k)}</span><h4>${a.ph ? PH(a.t) : esc(a.t)}</h4><p>${esc(a.d)}</p></div>`).join('')}
     </div>
   </div>
 </section>`;
@@ -416,13 +413,13 @@ const solDetail = (s, idx) => `
     <div class="sol-block" style="margin-top:0;border-top:1px solid var(--ink);padding-top:0">
       <div class="sol-head" style="padding-top:clamp(24px,3vw,40px)">
         <div class="sol-title">
-          <div class="mono">${String(idx + 1).padStart(2, '0')} — ${esc(s.en)}${s.rep ? ' · 대표 솔루션' : ''}</div>
+          <div class="mono">${String(idx + 1).padStart(2, '0')} — ${esc(s.en)}</div>
           <h2>${esc(s.name)}</h2>
           <p>${esc(s.def)}</p>
         </div>
         <div class="sol-link">
-          <a class="btn" href="${esc(s.url)}" ${s.id === 'flame' ? '' : 'aria-disabled="false"'}>솔루션 사이트 바로가기 <span aria-hidden="true">↗</span></a>
-          <span class="ph-note">${s.id === 'flame' ? '별도 사이트 주소를 확정해 주세요.' : '[외부 사이트 주소를 입력하세요]'}</span>
+          <a class="btn" href="${esc(s.url)}">솔루션 사이트 바로가기 <span aria-hidden="true">↗</span></a>
+          <span class="ph-note">[외부 사이트 주소를 입력하세요]</span>
         </div>
       </div>
 
@@ -451,109 +448,25 @@ const solDetail = (s, idx) => `
   </div>
 </section>`;
 
-const solAreas = () => `
-<section class="sec" id="areas" style="background:var(--paper)">
+/* 고객사 공급용 솔루션 — Flame(사내 시스템)과 구분 */
+const solEnterprise = () => `
+<section class="sec" id="solutions" style="background:var(--white);padding-bottom:0">
   <div class="wrap">
-    ${head('05', 'By Workflow Area', '업무영역별 활용', '같은 플랫폼, 다른 화면. 업무영역을 선택하면 어떤 기능을 쓰는지 확인할 수 있습니다.')}
-    <div class="tabs" role="tablist" aria-label="업무영역">
-      ${D.AREAS.map((a, i) => `<button role="tab" id="atab-${i}" aria-controls="apanel-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(a.kr)}</button>`).join('')}
-    </div>
-    ${D.AREAS.map((a, i) => `
-      <div class="tabpanel" role="tabpanel" id="apanel-${i}" aria-labelledby="atab-${i}" ${i === 0 ? '' : 'hidden'}>
-        <div class="tab-grid">
-          <div>
-            <div class="eyebrow">${esc(a.tag)}</div>
-            <h3 style="margin-top:20px">${esc(a.kr)}</h3>
-            <p>${esc(a.d)}</p>
-          </div>
-          <div>
-            <ul style="margin-top:0">${a.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
-            <div class="wf-tags" style="margin-top:24px">${a.sols.map(s => `<span>${esc(s)}</span>`).join('')}</div>
-          </div>
-        </div>
-      </div>`).join('')}
+    ${head('05', 'Enterprise Solutions', '엔터프라이즈 솔루션', '고객사에 공급·구축하는 솔루션입니다. 사내 업무 워크스페이스 Flame과는 별개입니다.')}
   </div>
-</section>`;
-
-const solCases = () => `
-<section class="sec" id="cases" style="background:var(--white)">
-  <div class="wrap">
-    ${head('06', 'Case Studies', '도입 사례', '아래 3건은 구조 확인용 자리표시자입니다. 고객 동의를 받은 실제 사례로 교체해 주세요.')}
-    <div class="cases">
-      ${D.CASES.map((c, i) => `
-        <article class="case rv d${i + 1}">
-          <div class="ind">${esc(c.ind)}</div>
-          <h3>${esc(c.t)}</h3>
-          <dl>
-            <div><dt>과제</dt><dd>${esc(c.task)}</dd></div>
-            <div><dt>해결</dt><dd>${esc(c.solve)}</dd></div>
-          </dl>
-          <div class="metric">${PH(c.metric)}</div>
-          <div class="ph-note" style="margin-top:8px">${esc(c.metricD)}</div>
-        </article>`).join('')}
-    </div>
-  </div>
-</section>`;
-
-const solStart = () => `
-<section class="sec" id="start" style="background:var(--paper)">
-  <div class="wrap">
-    ${head('07', 'Getting Started', '시작 가이드', '처음 사용하는 분을 위한 4단계. 계정을 만들고 첫 요청을 등록하면, 이후 흐름은 플랫폼이 안내합니다.')}
-    <div class="steps">
-      ${D.STEPS.map((s, i) => `
-        <div class="step rv d${i + 1}"><span class="n">${esc(s.n)}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div>`).join('')}
-    </div>
-
-    <div style="margin-top:clamp(48px,6vw,80px)">
-      <div class="eyebrow rv">FAQ</div>
-      <div class="acc" id="faq">
-        ${D.FAQ.map((f, i) => `
-          <div class="acc-item">
-            <button aria-expanded="false" aria-controls="faq-${i}" id="faqbtn-${i}">${esc(f.q)}<i aria-hidden="true"></i></button>
-            <div class="acc-body" id="faq-${i}" role="region" aria-labelledby="faqbtn-${i}"><div>${esc(f.a)}</div></div>
-          </div>`).join('')}
-      </div>
-    </div>
-  </div>
-</section>`;
-
-const solDemo = () => `
-<section class="sec dark" id="demo" style="background:var(--ink)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv" style="color:var(--muted-d)">08 — Demo</div>
-      <h2 class="rv d1">Flame을 직접<br>경험해 보세요.</h2>
-      <p class="rv d2">아래 영역에 데모 영상을 넣고, 버튼으로 데모 환경으로 이동하도록 연결하세요.</p>
-    </div>
-    <div class="demo-box rv" style="border-color:var(--line-d)">
-      ${phBlock('데모 영상', '16:9 · YouTube 또는 MP4 임베드')}
-      <div>
-        <div class="mono" style="color:var(--accent)">Live Demo</div>
-        <h3 style="margin-top:18px;font-size:clamp(22px,2vw,30px);font-weight:700;letter-spacing:-.035em;line-height:1.3">신청 없이 바로 확인하세요</h3>
-        <p style="margin-top:16px;color:var(--muted-d);font-size:15px;line-height:1.85">데모 영상과 체험 환경 링크를 확정해 주세요. 별도 신청 폼 없이 버튼 하나로 이동하도록 구성했습니다.</p>
-        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn btn-accent" href="#/solutions?sec=demo">데모 보기 ${arrow}</a>
-          <a class="btn btn-ghost" href="mailto:${esc(C.email)}">도입 문의 ${arrow}</a>
-        </div>
-        <div class="ph-note" style="margin-top:16px">[데모 환경 URL을 입력하세요]</div>
-      </div>
-    </div>
-  </div>
-</section>`;
+</section>
+${D.SOLUTIONS.map(solDetail).join('')}`;
 
 const renderSolutions = (params) => `
-${pgHero('<a href="#/solutions">Solutions</a>', 'Solutions — AI ITSM Platform', 'AI와 워크플로우로<br>업무를 하나로', '운영·고객·자산·인사 업무를 하나의 플랫폼에서 연결합니다. 금융 현장에서 직접 쓰며 다듬어 온 자체 개발 AI ITSM 플랫폼입니다.')}
+${pgHero('<a href="#/solutions">Solutions</a><span>/</span>Flame', 'Flame — Internal Workspace', '미래아이엔텍의 업무를 연결하는 사내 워크스페이스, Flame', 'Flame은 미래아이엔텍 임직원이 업무를 보다 효율적으로 수행할 수 있도록 자체 개발한 내부 업무 통합 시스템입니다.')}
 <nav class="subnav" aria-label="솔루션 내 이동"><div class="wrap subnav-in">
   ${SOL_NAV.map(n => `<a href="#/solutions?sec=${n.id}" data-sec="${n.id}">${esc(n.t)}</a>`).join('')}
 </div></nav>
 ${solOverview()}
-${solDetail(D.SOLUTIONS[0], 0)}
-${solDetail(D.SOLUTIONS[1], 1)}
-${solDetail(D.SOLUTIONS[2], 2)}
-${solAreas()}
-${solCases()}
-${solStart()}
-${solDemo()}`;
+${solFeatures()}
+${solUsage()}
+${solAI()}
+${solEnterprise()}`;
 
 /* ══════════════════════════ BUSINESS ══════════════════════════ */
 
@@ -597,7 +510,7 @@ const bizProjects = () => `
 </section>`;
 
 const renderBusiness = (params) => `
-${pgHero('<a href="#/business">Business</a>', 'Business — What we do', '금융 IT의 전 영역을<br>하나의 파트너가', 'SI · ITO · 인프라 · 솔루션의 네 개 사업라인과 AI 플랫폼으로, 계획부터 운영까지 전 주기를 책임집니다.')}
+${pgHero('<a href="#/business">Business</a>', 'Business — What we do', '금융 IT의 전 영역을<br>하나의 파트너가', 'SI · ITO · 인프라 · 솔루션의 네 개 사업라인과 디지털 전환 · AI 역량으로, 계획부터 운영까지 전 주기를 책임집니다.')}
 ${bizAreas()}
 ${bizProjects()}`;
 
@@ -620,7 +533,7 @@ const renderNewsroom = () => {
   const start = (newsPage - 1) * PER_PAGE;
   const slice = D.NEWS.slice(start, start + PER_PAGE);
   return `
-${pgHero('<a href="#/newsroom">Newsroom</a>', 'Newsroom — Latest', '미래아이엔텍 소식', '제품·사업·회사 소식을 최신순으로 전합니다. 아래 콘텐츠는 구조 확인용 샘플입니다.')}
+${pgHero('<a href="#/newsroom">Newsroom</a>', 'Newsroom — Latest', '미래아이엔텍 소식', '사업·기술·회사 소식을 최신순으로 전합니다. 아래 콘텐츠는 구조 확인용 샘플입니다.')}
 <section class="sec" style="background:var(--white)">
   <div class="wrap">
     <div class="proj-bar" style="border-top:1px solid var(--ink);border-bottom:0">
@@ -659,7 +572,7 @@ const renderArticle = slug => {
         <p>이 내용에 대한 자세한 안내는 <a href="mailto:${esc(C.email)}" style="color:var(--accent-deep)">${esc(C.email)}</a> 또는 ${esc(C.tel)}로 문의해 주세요.</p>
         <ul>
           <li>보도자료·취재 문의: ${esc(C.email)}</li>
-          <li>제품·도입 문의: ${esc(C.tel)}</li>
+          <li>사업 문의: ${esc(C.tel)}</li>
         </ul>
       </div>
       <div class="article-foot">
@@ -681,7 +594,7 @@ const footer = () => `
       <a href="#/" class="logo" aria-label="미래아이엔텍 홈"><span class="logo-mark">mr<i aria-hidden="true"></i>nt</span><span class="logo-kr">㈜미래아이엔텍</span></a>
       <nav class="ftr-nav" aria-label="푸터 메뉴">
         <div class="ftr-col"><span class="k">Company</span><a href="#/company">기업소개</a><a href="#/company/location">오시는 길</a><a href="#/company/org">조직구성</a></div>
-        <div class="ftr-col"><span class="k">Solutions</span><a href="#/solutions">개요</a><a href="#/solutions?sec=flame">Flame</a><a href="#/solutions?sec=demo">데모</a></div>
+        <div class="ftr-col"><span class="k">Solutions</span><a href="#/solutions">Flame 소개</a><a href="#/solutions?sec=features">주요 기능</a><a href="#/solutions?sec=solutions">엔터프라이즈 솔루션</a></div>
         <div class="ftr-col"><span class="k">Business</span><a href="#/business">사업영역</a><a href="#/business/projects">프로젝트</a></div>
         <div class="ftr-col"><span class="k">Newsroom</span><a href="#/newsroom">전체 보기</a></div>
       </nav>
@@ -693,7 +606,7 @@ const footer = () => `
     <div class="ftr-info">
       <div><div class="k">Address</div>${esc(C.address)}<br>${esc(C.addressEn)}</div>
       <div><div class="k">Contact</div><a href="tel:025575267">T. ${esc(C.tel)}</a><br>F. ${esc(C.fax)}<br><a href="mailto:${esc(C.email)}">${esc(C.email)}</a></div>
-      <div><div class="k">Business</div>SI · ITO · Infra<br>Enterprise Solution<br>AI ITSM Platform</div>
+      <div><div class="k">Business</div>SI · ITO · Infra<br>Enterprise Solution<br>Digital Transformation · AI</div>
       <div><div class="k">Legal</div>대표이사 ${esc(C.ceo)}<br>설립 ${esc(C.founded)}년</div>
     </div>
     <div class="ftr-bot">
@@ -721,13 +634,13 @@ const route = () => {
   const b = seg[1] || '';
   let html, title;
 
-  if (!a) { html = renderHome(); title = '미래아이엔텍 | Financial IT & AI Platform'; }
+  if (!a) { html = renderHome(); title = '미래아이엔텍 | Financial IT Partner'; }
   else if (a === 'company') {
     if (b === 'location') { html = companyLocation(); title = '오시는 길 | 미래아이엔텍'; }
     else if (b === 'org') { html = companyOrg(); title = '조직구성 | 미래아이엔텍'; }
     else { html = companyIntro(); title = '기업소개 | 미래아이엔텍'; }
   }
-  else if (a === 'solutions') { html = renderSolutions(params); title = 'Solutions — AI ITSM 플랫폼 | 미래아이엔텍'; }
+  else if (a === 'solutions') { html = renderSolutions(params); title = 'Flame — 사내 업무 워크스페이스 | 미래아이엔텍'; }
   else if (a === 'business') {
     if (b === 'projects') { html = renderBusiness(); title = '프로젝트 | 미래아이엔텍'; }
     else { html = renderBusiness(); title = '사업영역 | 미래아이엔텍'; }
@@ -743,7 +656,7 @@ const route = () => {
   window.MR.initTech();
   window.MR.marquee($('#mq1'), D.CLIENTS.row1);
   window.MR.marquee($('#mq2'), D.CLIENTS.row2);
-  window.MR.marquee($('#ftrMq'), ['MIRAE I&N TECH', 'FINANCIAL IT', 'AI ITSM PLATFORM', 'SINCE 2003', 'SEOUL, KR']);
+  window.MR.marquee($('#ftrMq'), ['MIRAE I&N TECH', 'FINANCIAL IT', 'DIGITAL TRANSFORMATION', 'SINCE 2003', 'SEOUL, KR']);
   window.MR.renderViz();
 
   if (a === 'business' || !a) { if ($('#fgroups')) initProjects(); }
