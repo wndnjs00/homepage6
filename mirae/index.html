@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미래아이엔텍 | Financial IT &amp; AI Platform</title>
+<meta name="description" content="미래아이엔텍은 2003년 설립 이후 은행·보험·카드·저축은행·캐피탈 등 금융권 시스템을 구축·운영해 온 IT 서비스 전문 기업입니다. 금융 현장 경험을 바탕으로 AI 기반 ITSM 플랫폼 Flame을 자체 개발했습니다.">
+<meta name="theme-color" content="#0A110F">
+<meta property="og:title" content="미래아이엔텍 | Financial IT &amp; AI Platform">
+<meta property="og:description" content="금융 IT의 경험으로, AI 업무 플랫폼을 만듭니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#app">본문으로 바로 가기</a>
+
+<!-- ═══════════ Header ═══════════ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#/" class="logo" aria-label="미래아이엔텍 홈">
+      <span class="logo-mark">mr<i aria-hidden="true"></i>nt</span>
+      <span class="logo-kr">미래아이엔텍</span>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴">
+      <div class="nav-item">
+        <button class="nav-btn" aria-expanded="false" aria-haspopup="true">COMPANY <span class="caret" aria-hidden="true"></span></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-col">
+              <span class="mega-lbl">Company</span>
+              <a href="#/company"><b>기업소개</b><small>비전 · 개요 · 연혁 · 핵심가치</small></a>
+              <a href="#/company/location"><b>오시는 길</b><small>주소 · 연락처 · 대중교통 안내</small></a>
+              <a href="#/company/org"><b>조직구성</b><small>ITO · SI · 인프라 · 솔루션 · 미래기술연구소</small></a>
+            </div>
+            <div class="mega-side">
+              <div>
+                <span class="mono">Est. 2003</span>
+                <p style="margin-top:14px">서울 중구 수표로. 20년 넘게 금융권 시스템을 구축하고 운영해 온 팀입니다.</p>
+              </div>
+              <a href="mailto:mrint01@mrint.co.kr" class="mono" style="color:var(--paper)">mrint01@mrint.co.kr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#/solutions">SOLUTIONS</a>
+
+      <div class="nav-item">
+        <button class="nav-btn" aria-expanded="false" aria-haspopup="true">BUSINESS <span class="caret" aria-hidden="true"></span></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-col">
+              <span class="mega-lbl">Business</span>
+              <a href="#/business"><b>사업영역</b><small>금융 IT · SI · ITO · 컨설팅 · 솔루션 · AI</small></a>
+              <a href="#/business/projects"><b>프로젝트</b><small>2024–2026 공개 사업실적 21건</small></a>
+            </div>
+            <div class="mega-side">
+              <div>
+                <span class="mono">21 Projects</span>
+                <p style="margin-top:14px">은행 · 보험 · 카드/캐피탈 · 저축은행 · 제조·서비스까지. 수행 이력을 조건별로 확인하세요.</p>
+              </div>
+              <a href="#/business/projects" class="mono" style="color:var(--paper)">실적 보기 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#/newsroom">NEWSROOM</a>
+    </nav>
+
+    <div class="hdr-actions">
+      <a href="#/solutions?sec=demo" class="btn btn-accent btn-sm">데모 보기 <span class="arr" aria-hidden="true"></span></a>
+      <a href="mailto:mrint01@mrint.co.kr" class="nav-cta">Contact</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ═══════════ Mobile menu ═══════════ -->
+<div class="mnav" id="mnav">
+  <nav aria-label="모바일 메뉴">
+    <ol>
+      <li class="mnav-grp">
+        <button class="mnav-t" aria-expanded="false"><span>COMPANY</span><i aria-hidden="true"></i></button>
+        <div class="mnav-sub">
+          <a href="#/company">기업소개</a>
+          <a href="#/company/location">오시는 길</a>
+          <a href="#/company/org">조직구성</a>
+        </div>
+      </li>
+      <li><a href="#/solutions">SOLUTIONS</a></li>
+      <li class="mnav-grp">
+        <button class="mnav-t" aria-expanded="false"><span>BUSINESS</span><i aria-hidden="true"></i></button>
+        <div class="mnav-sub">
+          <a href="#/business">사업영역</a>
+          <a href="#/business/projects">프로젝트</a>
+        </div>
+      </li>
+      <li><a href="#/newsroom">NEWSROOM</a></li>
+    </ol>
+    <div class="mnav-cta">
+      <a href="#/solutions?sec=demo" class="btn btn-accent">데모 보기 <span class="arr" aria-hidden="true"></span></a>
+      <a href="mailto:mrint01@mrint.co.kr" class="btn btn-ghost">Contact <span class="arr" aria-hidden="true"></span></a>
+    </div>
+  </nav>
+  <div class="mnav-foot">T. 02-557-5267<br><a href="mailto:mrint01@mrint.co.kr">mrint01@mrint.co.kr</a><br>서울시 중구 수표로 23, 1001호·1101호</div>
+</div>
+
+<main id="app"></main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <a href="#/" class="logo" aria-label="미래아이엔텍 홈"><span class="logo-mark">mr<i aria-hidden="true"></i>nt</span><span class="logo-kr">㈜미래아이엔텍</span></a>
+      <nav class="ftr-nav" aria-label="푸터 메뉴">
+        <div class="ftr-col"><span class="k">Company</span><a href="#/company">기업소개</a><a href="#/company/location">오시는 길</a><a href="#/company/org">조직구성</a></div>
+        <div class="ftr-col"><span class="k">Solutions</span><a href="#/solutions">개요</a><a href="#/solutions?sec=flame">Flame</a><a href="#/solutions?sec=demo">데모</a></div>
+        <div class="ftr-col"><span class="k">Business</span><a href="#/business">사업영역</a><a href="#/business/projects">프로젝트</a></div>
+        <div class="ftr-col"><span class="k">Newsroom</span><a href="#/newsroom">전체 보기</a></div>
+      </nav>
+    </div>
+  </div>
+  <div class="ftr-marq"><div class="marq"><div class="marq-track" id="ftrMq"></div></div></div>
+  <div class="wrap">
+    <div class="ftr-big" aria-hidden="true">mr<i></i>nt</div>
+    <div class="ftr-info">
+      <div><div class="k">Address</div>서울시 중구 수표로 23, 1001호·1101호<br>23 Supyo-ro, Jung-gu, Seoul</div>
+      <div><div class="k">Contact</div><a href="tel:025575267">T. 02-557-5267</a><br>F. 02-557-5268<br><a href="mailto:mrint01@mrint.co.kr">mrint01@mrint.co.kr</a></div>
+      <div><div class="k">Business</div>SI · ITO · Infra<br>Enterprise Solution<br>AI ITSM Platform</div>
+      <div><div class="k">Legal</div>대표이사 김학연<br>설립 2003년</div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 MIRAE I&amp;N TECH CO., LTD. ALL RIGHTS RESERVED.</span>
+      <span>대표이사 김학연 · 서울시 중구 수표로 23</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
